@@ -8,7 +8,7 @@ const uid2 = require("uid2");
 const bcrypt = require("bcrypt");
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
+router.get("/test", (req, res) => {
   res.json({ result: "Test response backend" });
 });
 
