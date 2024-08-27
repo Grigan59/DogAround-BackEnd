@@ -9,24 +9,24 @@ const bcrypt = require("bcrypt");
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
-  res.send("respond with a resource");
+  res.json({ result: "Test response backend" });
 });
 
 // A supprimer ??? à priori non utilisé
-router.get("/signin", (req, res) => {
+/* router.get("/signin", (req, res) => {
   User.find().then((data) => {
     res.json({ result: true, user: data });
   });
-});
+}); */
 
 
 // A supprimer ??? à priori non utilisé
-router.get("/signup", (req, res) => {
+/* router.get("/signup", (req, res) => {
   User.findOne({ peudo: req.body.pseudo }).then((data) => {
     res.json({ result: true, user: data });
     console.log("data = " + data);
   });
-});
+}); */
 
 //route pour SignUp
 router.post("/signup", (req, res) => {
@@ -90,7 +90,7 @@ router.post("/signup", (req, res) => {
 });
 
 //route pour récupérer les informations de l'utilisateur
-router.get('/signin', (req, res) => {
+/* router.get('/signin', (req, res) => {
   User.findOne({token: token}).then((userData) => {
     if(userData){
       res.json({result: true, user: userData})
@@ -98,7 +98,7 @@ router.get('/signin', (req, res) => {
       res.json({result: false, message: 'user not found'})
     }
   })
-})
+}) */
 
 //route pour la connection de l'utilisateur
 router.post("/signin", (req, res) => {
@@ -133,12 +133,12 @@ router.post("/signin", (req, res) => {
 });
 
 // A supprimer ??? à priori non utilisé
-router.get("/", (req, res) => {
+/* router.get("/", (req, res) => {
   User.findOne({ peudo: req.body.pseudo }).then((data) => {
     res.json({ result: true, user: data });
     console.log("data = " + data);
   });
-});
+}); */
 
 //route pour mettre à jour le token
 router.put("/:token", (req, res) => {
